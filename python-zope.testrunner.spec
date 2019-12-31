@@ -9,7 +9,7 @@ Summary:	Flexible test runner with layer support
 Summary(pl.UTF-8):	Elastyczne uruchamianie testów z obsługą warstw
 Name:		python-zope.testrunner
 Version:	5.1
-Release:	1
+Release:	2
 License:	ZPL v2.1
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/zope.testrunner/
@@ -71,7 +71,7 @@ Ten pakiet zapewnia elastyczne uruchamianie testów z obsługą warstw.
 Summary:	Example tests for zope.testrunner
 Summary(pl.UTF-8):	Przykładowe testy dla szkieletu zope.testrunner
 Group:		Development/Tools
-Requires:	python3-zope.testruner = %{version}-%{release}
+Requires:	python3-zope.testrunner = %{version}-%{release}
 
 %description -n python3-zope.testrunner-examples
 Example tests for zope.testrunner.
