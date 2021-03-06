@@ -5,11 +5,13 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
+%define		_enable_debug_packages	0
+
 Summary:	Flexible test runner with layer support
 Summary(pl.UTF-8):	Elastyczne uruchamianie testów z obsługą warstw
 Name:		python-zope.testrunner
 Version:	5.1
-Release:	2
+Release:	3
 License:	ZPL v2.1
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/zope.testrunner/
