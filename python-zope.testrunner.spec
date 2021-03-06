@@ -44,6 +44,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
 BuildRequires:	python3-sphinxcontrib-programoutput
+BuildRequires:	python3-zope.exceptions
 BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python-modules >= 1:2.7
