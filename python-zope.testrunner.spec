@@ -11,7 +11,7 @@ Summary:	Flexible test runner with layer support
 Summary(pl.UTF-8):	Elastyczne uruchamianie testów z obsługą warstw
 Name:		python-zope.testrunner
 Version:	5.1
-Release:	3
+Release:	4
 License:	ZPL v2.1
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/zope.testrunner/
@@ -49,6 +49,7 @@ BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python-modules >= 1:2.7
 Requires:	python-zope-base
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -115,24 +116,24 @@ rm -rf $RPM_BUILD_ROOT
 
 %if %{with python2}
 %py_install \
-	--install-purelib=%{py_sitedir}
+	--install-purelib=%{py_sitescriptdir}
 
 %py_postclean
 # python2 test examples are useless because of postclean
-%{__rm} -r $RPM_BUILD_ROOT%{py_sitedir}/zope/testrunner/tests
+%{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/zope/testrunner/tests
 
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/zope-testrunner{,-2}
 %endif
 
 %if %{with python3}
 %py3_install \
-	--install-purelib=%{py3_sitedir}
+	--install-purelib=%{py3_sitescriptdir}
 
-%{__rm} $RPM_BUILD_ROOT%{py3_sitedir}/zope/testrunner/tests/*.{py,rst}
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/zope/testrunner/tests/__pycache__
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/zope/testrunner/tests/testrunner-ex*/__pycache__
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/zope/testrunner/tests/testrunner-ex*/*/__pycache__
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/zope/testrunner/tests/testrunner-ex*/*/*/__pycache__
+%{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/*.{py,rst}
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/__pycache__
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/__pycache__
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/*/__pycache__
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/*/*/__pycache__
 
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/zope-testrunner{,-3}
 %endif
@@ -145,9 +146,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.rst COPYRIGHT.rst LICENSE.md README.rst
 %attr(755,root,root) %{_bindir}/zope-testrunner-2
-%{py_sitedir}/zope/testrunner
-%{py_sitedir}/zope.testrunner-%{version}-py*.egg-info
-%{py_sitedir}/zope.testrunner-%{version}-py*-nspkg.pth
+%{py_sitescriptdir}/zope/testrunner
+%{py_sitescriptdir}/zope.testrunner-%{version}-py*.egg-info
+%{py_sitescriptdir}/zope.testrunner-%{version}-py*-nspkg.pth
 %endif
 
 %if %{with python3}
@@ -155,16 +156,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.rst COPYRIGHT.rst LICENSE.md README.rst
 %attr(755,root,root) %{_bindir}/zope-testrunner-3
-%dir %{py3_sitedir}/zope/testrunner
-%{py3_sitedir}/zope/testrunner/*.py
-%{py3_sitedir}/zope/testrunner/__pycache__
-%{py3_sitedir}/zope.testrunner-%{version}-py*.egg-info
-%{py3_sitedir}/zope.testrunner-%{version}-py*-nspkg.pth
+%dir %{py3_sitescriptdir}/zope/testrunner
+%{py3_sitescriptdir}/zope/testrunner/*.py
+%{py3_sitescriptdir}/zope/testrunner/__pycache__
+%{py3_sitescriptdir}/zope.testrunner-%{version}-py*.egg-info
+%{py3_sitescriptdir}/zope.testrunner-%{version}-py*-nspkg.pth
 
 %files -n python3-zope.testrunner-examples
 %defattr(644,root,root,755)
-%dir %{py3_sitedir}/zope/testrunner/tests
-%{py3_sitedir}/zope/testrunner/tests/testrunner-ex*
+%dir %{py3_sitescriptdir}/zope/testrunner/tests
+%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*
 %endif
 
 %if %{with doc}
