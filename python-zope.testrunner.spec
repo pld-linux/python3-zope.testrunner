@@ -8,13 +8,14 @@
 Summary:	Flexible test runner with layer support
 Summary(pl.UTF-8):	Elastyczne uruchamianie testów z obsługą warstw
 Name:		python-zope.testrunner
-Version:	5.4.0
-Release:	3
+# keep 5.x here for python2 support
+Version:	5.6
+Release:	1
 License:	ZPL v2.1
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/zope.testrunner/
 Source0:	https://files.pythonhosted.org/packages/source/z/zope.testrunner/zope.testrunner-%{version}.tar.gz
-# Source0-md5:	ae1320203ab70780632e030da50d82b0
+# Source0-md5:	4800710607c36bd00e6771738c208eaa
 URL:		https://www.zope.org/
 %if %{with python2}
 BuildRequires:	python >= 1:2.7
@@ -129,6 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/*.{py,rst}
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/__pycache__
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/logsupport
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/__pycache__
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/*/__pycache__
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/zope/testrunner/tests/testrunner-ex*/*/*/__pycache__
