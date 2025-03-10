@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	Elastyczne uruchamianie testów z obsługą warstw
 Name:		python-zope.testrunner
 # keep 5.x here for python2 support
 Version:	5.6
-Release:	1
+Release:	2
 License:	ZPL v2.1
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/zope.testrunner/
