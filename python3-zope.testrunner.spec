@@ -27,6 +27,8 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with doc}
 BuildRequires:	python3-sphinxcontrib-programoutput
 BuildRequires:	python3-zope.exceptions
+# already installed package due to package namespace issues (required for "_modules" docs subdir)
+BuildRequires:	python3-zope.testrunner
 BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python3-modules >= 1:3.9
